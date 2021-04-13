@@ -1,0 +1,48 @@
+{
+  "Records": [
+    {
+      "cf": {
+        "config": {
+          "distributionId": "EXAMPLE"
+        },
+        "request": {
+          "uri": "/verify",
+          "method": "POST",
+          "clientIp": "2001:cdba::3257:9652",
+          "headers": {
+            "host": [
+              {
+                "key": "Host",
+                "value": "d123.cf.net"
+              }
+            ],
+            "user-agent": [
+              {
+                "key": "User-Agent",
+                "value": "Test Agent"
+              }
+            ],
+            "user-name": [
+              {
+                "key": "User-Name",
+                "value": "aws-cloudfront"
+              }
+            ]
+          },
+          "client_id": "fingerprint_client_id",
+          "kongParams": {
+            "path": "/login",
+            "method": "POST",
+            "parameters": "",
+            "login": "teste@teste.com.br",
+            "username": "teste@teste.com.br",
+            "password": "123456",
+            "sessionId": "session_id",
+            "apikey": "kong_api_key",
+            "authorization": "Basic base64"
+          }
+        }
+      }
+    }
+  ]
+}

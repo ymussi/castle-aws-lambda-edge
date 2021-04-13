@@ -1,0 +1,35 @@
+{
+    "title": "Customer Verify validate",
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "enum": [
+            "/verify"
+        ]
+      },
+      "method": {
+        "type": "string",
+        "enum": [
+            "POST"
+        ]
+      },
+      "login": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "sessionId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "path",
+      "method",
+      "username",
+      "password",
+      "sessionId"
+    ]
+  }
+  

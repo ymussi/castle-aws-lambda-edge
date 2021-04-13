@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: |
+  A Castle AWS Cloudformation Edge Lambda
+
+Parameters:
+  Project:
+    Description: CastleLambda
+    Type: String
+    Default: MadeiraMadeira
+
+Environment:
+  Description: ambientes de execução de serviço
+  Type: String
+  AllowedValues:
+    - dev
+    - staging
+    - prod
+
+Globals:
+  Function:
+    Runtime: python3.7
+    MemorySize: 128
+    Timeout: 120
+    Tags:
+      Project: !Ref Project
+      Environment: !Ref Environment
+    Environment:
+      Variables:
+        PROJECT: !Ref Project
+        ENV: !Ref Environment
+
+Resources:
+  CastleFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub 'CastleFn-${Environment}'
+      Description: Valida a presença de Bots na tentativa de request
+      Handler: app.lambda_handler
